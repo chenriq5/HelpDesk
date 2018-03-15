@@ -1,0 +1,73 @@
+<div class="col-xs-12">
+    <h3>Create a Ticket</h3>
+    <hr>
+</div>
+<form name="newTicketCtrl.myForm" class="col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-6 col-sm-push-3 col-md-6 service-form-content" ng-submit="newTicketCtrl.createTicket(newTicketCtrl.ticket)">
+    <h6 style="color">* Please fill all required fields before submitting</h6>
+    <fieldset class="form-inline">
+        <legend>Employee Information:</legend>
+        <input class="form-control" type="text" name="customerfName" id="customerfName" placeholder="* First Name" ng-model="newTicketCtrl.ticket.endUser.fname" ng-required="true">
+        <input class="form-control" type="text" name="customerlName" id="customerlName" placeholder="* Last Name" ng-model="newTicketCtrl.ticket.endUser.lname" ng-required="true">
+        <input class="form-control" type="tel" name="customerNumber" id="customerNumber" placeholder="* Phone Number" ng-model="newTicketCtrl.ticket.endUser.phoneNumber" ng-required="true">
+        <input class="form-control" type="email" name="customerEmail" id="customerEmail" placeholder="* Email " ng-model="newTicketCtrl.ticket.endUser.email" ng-required="true">
+
+        <span ng-show="newTicketCtrl.myform.customerfName.$pristine && newTicketCtrl.myForm.customerfName.$dirty && newTicketCtrl.myForm.customerfName.$error.required"></span>
+        <span ng-show="newTicketCtrl.myform.customerlName.$pristine && newTicketCtrl.myForm.customerlName.$dirty && newTicketCtrl.myForm.customerlName.$error.required"></span>
+        <span ng-show="newTicketCtrl.myform.customerNumber.$pristine && newTicketCtrl.myForm.customerNumber.$dirty && newTicketCtrl.myForm.customerNumber.$error.required"></span>
+        <span ng-show="newTicketCtrl.myform.customerEmail.$pristine && newTicketCtrl.myForm.customerEmail.$dirty && newTicketCtrl.myForm.customerEmail.$error.required"></span>
+    </fieldset>
+    <fielset>
+        <legend>Ticket Information: </legend>
+        <div class="form-group">
+            <select name=ticket_type_id class="form-control" id="ticketCategory" ng-model="newTicketCtrl.ticket.issueType" ng-options="type as type.typeName for type in newTicketCtrl.ticketTypes track by type.id" ng-required>
+                <option value="" disabled selected>* Ticket Type..</option>
+            </select>
+            <span ng-show="newTicketCtrl.myForm.ticket_type_id.$dirty && newTicketCtrl.myForm.ticket_type_id.$error.required"></span>
+        </div>
+        <div class="form-inline">
+            <select name="groups_id" class="form-control" id="assignGroup" ng-model="newTicketCtrl.ticket.group" ng-options="group as group.groupName for group in newTicketCtrl.groups track by group.id" ng-required="true">
+                <option value="" disabled selected>* Groups..</option>
+            </select>
+            <select name="technician_id" class="form-control" id="assignTechnician" ng-model="newTicketCtrl.ticket.group.tech" ng-if="newTicketCtrl.ticket.group" ng-options="tech as tech.techName for tech in newTicketCtrl.ticket.group.techs track by tech.id" ng-required="true">
+                <option value="" disabled selected>* Technicians..</option>
+            </select>
+            <span ng-show="newTicketCtrl.myForm.groups_id.$dirty && newTicketCtrl.myForm.groups_id.$error.required"></span>
+            <span ng-show="newTicketCtrl.myForm.technician_id.$dirty && newTicketCtrl.myForm.technician_id.$error.required"></span>
+        </div>
+        <div class="form-inline">
+            <select name="priority_id" class="form-control" id="priority" ng-model="newTicketCtrl.ticket.priority" ng-options="priority as priority.level for priority in newTicketCtrl.priorityLevels track by priority.id" ng-required="true">
+                <option value="" disabled selected>* Priority..</option>
+            </select>
+            <select name="status_id" class="form-control" id="status" ng-model="newTicketCtrl.ticket.status" ng-options="status as status.status for status in newTicketCtrl.statusType track by status.id" ng-required="true">
+                <option value="" disabled selected>* Ticket Status..</option>
+            </select>
+            <span ng-show="newTicketCtrl.myForm.priority_id.$dirty && newTicketCtrl.myForm.priority_id.$error.required"></span>
+            <span ng-show="newTicketCtrl.myForm.status_id.$dirty && newTicketCtrl.myForm.status_id.$error.required"></span>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleTextarea" ng-model="newTicketCtrl.ticket.description" rows="3" placeholder="Please provide more details if needed.."></textarea>
+        </div>
+    </fielset>
+    <div class="service-request-button">
+        <button type="submit" class="btn btn-success pull-right" ng-disabled="newTicketCtrl.myForm.$invalid" data-toggle="modal" data-target="#exampleModal"> Submit</button>
+        <button type="reset" class="btn btn-danger pull-right" ng-click="newTicketCtrl.resetForm()"> Cancel</button>
+    </div>
+    <section id="submit-popup" ng-show="newTicketCtrl.submited">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h1 class="header-font" style="color: white; font-size: 42px; margin: 0;">Success!</h1>
+                    </div>
+                    <div class="row modal-body">
+                        <!-- <span class="col-xs-2 glyphicon glyphicon-ok" aria-hidden="true"></span> -->
+                        <h4 class="col-xs-12" style="text-align: center;">Ticket has successfully been submitted</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

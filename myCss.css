@@ -1,0 +1,359 @@
+/*overwriting container and row */
+.container {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.row.login {
+    margin-top: 11%;   
+}
+
+/*login style*/
+.auth0-lock-submit {
+    background-color: black !important;
+}
+.auth0-lock-header-logo {
+    margin: 0 !important;
+}
+.header-font,
+.auth0-lock-name {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+html {
+    height: 100%;
+    width: 100%;  
+}
+
+body {
+    height: 100%;
+    width: 100%;  
+}
+
+#mainContent{
+	position: relative;
+	height: 86% !important;
+}
+
+#home {
+    background-image: url('../images/bg-3.png')!important;
+    margin-bottom: 0;
+}
+
+input.form-control {
+	width: 98%;
+    margin-bottom: 7px;
+}
+.login-form button{
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0;   
+}
+
+footer {
+    text-align: center; 
+    color: darkgoldenrod !important;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black !important;
+}
+.container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.row{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/*user homepage */
+header {
+    height: auto !important;
+    background: linear-gradient(to right, black, aliceblue) !important;
+    color: white;
+}
+
+.header-font {
+    font-family: Impact, Charcoal, sans-serif;
+    color: darkgoldenrod;
+}
+
+h1.header-font,
+.auth0-lock-name,
+.header-font a {
+    color: darkgoldenrod !important;
+}
+
+.logout,
+header button,
+.header-button{
+    border-color: darkgoldenrod ;
+    background-color: darkgoldenrod;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    float: right;
+}
+
+.logout {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 0 !important;
+}
+header button {
+    width: 50%;
+}
+
+.header-button {
+    width: 25%;
+}
+
+@media (max-width: 767px) {
+    header button
+    {
+        margin-bottom: 10px;
+    }
+    
+    header h1 {
+        text-align: center;
+    }  
+}
+
+#employee-info {
+	top: 5%;
+	position: absolute;
+	right: 0;
+	z-index: 1;
+    margin: 10px;
+    color: darkgreen;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    float: right;
+}
+
+@media(max-width: 767px) {
+	 #employee-info {
+    	top: 17%;
+        margin: 0 0 5px 25%;
+    }
+}
+
+.title{
+    padding: 0;
+}
+
+#employee-info h4,
+.profile-pic {
+    padding: 0;
+    text-align: center;
+}
+
+.profile-pic img {
+    height: 11%;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin-left: 8px;
+}
+
+.title > p,
+.col-xs-12.col-md-6 h2 {
+    margin:0;
+}
+
+/*
+.logout {
+    margin-top: 25px;
+}
+
+.logout a {
+    text-decoration: none;
+}
+*/
+
+/* navbar*/
+.navbar {
+	background-color: whitesmoke;
+	border-bottom: 1px solid #ddd;
+	padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    min-height: 0;
+}
+
+.navbar > li {
+	float: left;
+    margin-bottom: -1px;
+    position: relative;
+    display: block;
+}
+
+.navbar > li.active > a {
+	color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.navbar > li > a {
+    color: darkgoldenrod;
+	margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+#create-title {
+    padding: 0 15px;
+}
+
+hr {
+    border-color: darkgoldenrod;
+}
+
+ul.nav.nav-tabs {
+    background-color: whitesmoke;
+    padding-top: 10px;
+}
+
+button.btn.btn-danger.pull-right {
+    margin-right: 5px;
+}
+
+.service-form-content {
+    margin-bottom: 45px;
+    margin-top: 25px;
+    bottom: 45px;
+}
+
+.service-form-content h6{
+    margin-bottom: 0;
+}
+
+legend {
+    margin-bottom: 15px;
+    color: darkgoldenrod;
+}
+
+.form-inline .form-control {
+	width: 48%;
+}
+
+.form-inline {
+	margin-bottom: 15px;
+}
+
+.form-group .form-control {
+	width: 97%;
+}
+
+@media (max-width: 767px) {
+	.form-inline .form-control {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	
+	.form-group .form-control {
+		width: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	button.btn.btn-success.pull-right {
+	    margin-right: 3%;
+	}
+}
+
+input.ng-invalid.ng-dirty {
+	border-color: red;
+}
+
+.modal-header {
+	text-align: center;
+	background: linear-gradient(to right, black, aliceblue) !important;
+  
+}
+
+
+/* My Ticket*/
+.panel-group {
+	margin-bottom: 0;
+}
+
+.expand-button {
+	border-radius: 4px;
+	background-color: white;
+}
+
+#description {
+    border-radius: 4px;
+	padding: 30px 10px;
+	background-color: whitesmoke;
+}
+
+@media (min-width: 992px) {
+	.filter-ticket {
+		margin-top: 20px;
+	}
+}
+
+#show-all thead tr {
+    color: white;
+    background-color: darkgoldenrod;
+}
+
+#view-tickets {
+    margin-bottom: 0;
+}
+
+.status-numbers table tbody,
+.priority-numbers table tbody td{
+    color: darkslategray;
+}
+
+.priority-numbers {
+     padding: 0;
+     margin-bottom: 10px;
+     border: 2px whitesmoke solid;
+     border-radius: 4px;
+}
+
+.priority-numbers table {
+    margin: 10px;
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+@media (max-width: 991px) {
+    .priority-numbers table {
+       margin-bottom: 30px; 
+    }
+}
+
+@media (min-width: 992px) {
+    .view-ticket-table {
+        margin-bottom: 30px;
+    }
+}
+
+.glyphicon-stop {
+    
+}
+
+/*work on ticket */
+.employee-contact {
+    border: solid 2px whitesmoke;
+    border-radius:4px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}

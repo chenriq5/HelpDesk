@@ -1,0 +1,27 @@
+<table class="table table-hover" id="show-all">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Priority</th>
+            <th>Type</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat-start="ticket in myTicketsTblCtrl.myTickets | filter: {status: {id: techDashCtrl.statusFilter.id}} | filter: {priority: {id: techDashCtrl.priorityFilter.id}}">
+            <td>
+                <button class="expand-button btn btn-default btn-xs" ng-if="ticket.expanded" ng-click="ticket.expanded = false"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                <button class="expand-button btn btn-default btn-xs " ng-if="!ticket.expanded" ng-click="ticket.expanded = true"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+            </td>
+            <td>{{ticket.endUser.fname + " " + ticket.endUser.lname}}</td>
+            <td>{{myTicketsTblCtrl.catalogueService.getPrNameInCtlg(ticket.priority.id)}}</td>
+            <td>{{myTicketsTblCtrl.catalogueService.getItNameInCtlg(ticket.issueType.id)}}</td>
+            <td>{{myTicketsTblCtrl.catalogueService.getStNameInCtlg(ticket.status.id)}}</td>
+        </tr>
+        <tr ng-if="ticket.expanded" ng-repeat-end="">
+            <td id="description" colspan="12">Ticket Description: {{ticket.description}}
+                <a ui-sref=".editTicket" ng-click="myTicketsTblCtrl.setWorkingTicket(ticket)">Solve me!</a></td>
+        </tr>
+    </tbody>
+</table>

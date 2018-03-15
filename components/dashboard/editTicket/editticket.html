@@ -1,0 +1,43 @@
+<div style="padding: 10px 10px 65px 10px; border: whitesmoke 2px solid; margin-bottom: 15%;">   
+    <form name="editTicketCtrl.editForm" ng-submit="editTicketCtrl.editTicket(editTicketCtrl.workingTicket)">
+        <h3 style="margin-top: 0;">Ticket #: {{editTicketCtrl.workingTicket.number}}</h3>
+        <span id="sla_creation_dt">Creation Datetime: {{editTicketCtrl.workingTicket.sla_creation_dt}}</span>
+        <span id="sla_expected_dt">Expected Resolution Time: {{editTicketCtrl.workingTicket.sla_expected_dt}}</span>
+        <span id="sla_archive_dt">Resolution Time: {{editTicketCtrl.workingTicket.sla_archive_dt}}</span>
+        <div class="employee-contact row">
+            <h4>Employee Contact information</h4>
+            <div class="col-xs-4">
+                <label>Name: </label>
+                <p>{{editTicketCtrl.workingTicket.endUser.fname + " " + editTicketCtrl.workingTicket.endUser.lname}}</p>
+            </div>
+            <div class="col-xs-4"> 
+                <label>Email: </label>
+                <p>{{editTicketCtrl.workingTicket.endUser.email}}</p>
+            </div>
+            <div class="col-xs-4">
+                <label>Phone Number: </label>
+                <p>{{editTicketCtrl.workingTicket.endUser.phoneNumber}}</p>
+            </div>
+        </div>
+        <div class="form-inline">
+            <select name="priority_id" class="form-control" id="priority" ng-model="editTicketCtrl.workingTicket.priority" ng-options="priority as priority.level for priority in editTicketCtrl.priorities track by priority.id" ng-required="true">
+                <option value="" disabled selected>* Priority..</option>
+            </select>
+            <select name="status_id" class="form-control" id="status" ng-model="editTicketCtrl.workingTicket.status" ng-options="stat as stat.status for stat in editTicketCtrl.statuses track by stat.id" ng-required="true">
+                <option value="" disabled selected>* Ticket Status..</option>
+            </select>
+
+            <span ng-show="newTicketCtrl.myForm.priority_id.$dirty && newTicketCtrl.myForm.priority_id.$error.required"></span>
+            <span ng-show="newTicketCtrl.myForm.status_id.$dirty && newTicketCtrl.myForm.status_id.$error.required"></span>
+
+        </div>
+        <div class="">
+
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="editTicketCtrl.workingTicket.description" placeholder="Please provide more details if needed.."></textarea>
+        </div>
+        <button type="submit" class="btn btn-success pull-right" ng-disabled="editTicketCtrl.editForm.$invalid">Submit</button>
+
+    </form>
+</div>

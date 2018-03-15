@@ -1,0 +1,21 @@
+<!--<div class="container">-->
+<section class="row">
+    <nav>
+        <ul class="navbar">
+            <li class="nav-item" ng-class="{active:techDashCtrl.isTabSelected(1)}">
+                <a ui-sref=".newTicket" ng-click="techDashCtrl.setTabValue(1)"> <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Create a Ticket</a>
+            </li>
+            <li class="nav-item" ng-class="{active:techDashCtrl.isTabSelected(2)}">
+                <a ui-sref=".myTickets" ng-click="techDashCtrl.setTabValue(2)"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> My Tickets</a>
+            </li>
+            <li class="nav-item" ng-class="{active:techDashCtrl.isTabSelected(3)}">
+                <a ui-sref=".knowbase" ng-click="techDashCtrl.setTabValue(3)"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Quick Stats</a>
+            </li>
+        </ul>
+    </nav>
+</section>
+<div class="tab-content" ui-view>
+</div>
+
+
+<!--</div>   -->

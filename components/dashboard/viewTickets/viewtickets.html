@@ -1,0 +1,43 @@
+<div class=" row service-dropdown">
+    <div class="col-xs-12">
+        <h3>Ticket Status</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12 col-sm-6 form-inline filter-ticket">
+        <label>Status</label>
+        <select name="status_id" class="form-control" id="status" ng-model="techDashCtrl.statusFilter" ng-options="status as status.status for status in myTicketsCtrl.statuses track by status.id">
+            <option value="" selected>Show All</option>
+        </select>
+    </div>
+    <div class="col-xs-12 col-sm-6 form-inline filter-ticket">
+        <label>Priority</label>
+
+        <select name="priority_id" class="form-control" id="priority" ng-model="techDashCtrl.priorityFilter" ng-options="priority as priority.level for priority in myTicketsCtrl.priorities track by priority.id">
+            <option value="" selected>Show All</option>
+        </select>
+    </div>
+</div>
+<div class="row" style="padding: 0 10px;">
+    <section class="col-xs-12 col-md-6 view-ticket-table">
+        <myticketstbl></myticketstbl>
+    </section>
+    <div class="col-xs-12 col-md-6 priority-numbers">
+        <table>
+            <thead>
+                <tr>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red;"></span> Urgent</td>
+                    <td><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: yellow;"></span> High</td>
+                    <td><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: green;"></span> Normal</td>
+                    <td><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: blue;"></span> Low</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="edit-ticket-content col-xs-12 col-md-6">
+        <ui-view></ui-view>
+    </div>

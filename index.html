@@ -1,0 +1,62 @@
+<html ng-app="HelpDeskApp">
+
+    <head>
+        <title>HelpDesk HD</title>
+
+        <!-- Viewport settings-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <base href="/">
+        <!-- Basic style -->
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+        <link href="myCss.css" rel="stylesheet" />
+        <link href="app.css" rel="stylesheet" />
+        <style type="text/css">
+            .auth0-lock-header {
+                background-image: url('images/bg-3.png') !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+            }
+            .auth0-lock-header-bg {
+                background: none;
+            }
+        </style>
+    </head>
+
+    <body ng-controller="appController as appCtrl">
+        <header class="row">
+            <h1 class="col-xs-6 col-sm-6 col-md-6 header-font"><a ui-sref="home">HelpDesk  <span class="glyphicon glyphicon-hd-video" aria-hidden="true"></span></a></h1>
+            <button class="btn btn-outline-warning header-button" ng-click="appCtrl.authService.login()" ng-if="!isAuthenticated">Log In</button>        
+            <profilebtn ng-if="isAuthenticated"></profilebtn>
+        </header>
+        <section id="mainContent" ui-view>
+
+        </section>
+        <footer>
+            <p> Copyright &copy; HelpDesk 2017-2018</p>
+        </footer>
+        <script type="text/javascript" src="auth0-variables.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script type="text/javascript" src="bower_components/auth0-lock/build/lock.js"></script>
+        <script type="text/javascript" src="bower_components/angular-lock/dist/angular-lock.js"></script>
+        <script type="text/javascript" src="bower_components/auth0.js/build/auth0.js"></script>
+        <script type="text/javascript" src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="app.run.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="components/auth/auth.service.js"></script>
+        <script type="text/javascript" src="components/auth/app.services.js"></script>
+        <script type="text/javascript" src="components/home/home.controller.js"></script>
+        <script type="text/javascript" src="components/dashboard/tech-dashboard.js"></script>
+        <script type="text/javascript" src="components/dashboard/newTicket/newticket.js"></script>
+        <script type="text/javascript" src="components/dashboard/viewTickets/viewtickets.js"></script>
+        <script type="text/javascript" src="components/dashboard/knowbase/knowbase.js"></script>
+        <script type="text/javascript" src="components/profile/profile.dir.js"></script>
+        <script type="text/javascript" src="components/dashboard/editTicket/editticket.js"></script>
+        <script type="text/javascript" src="components/dashboard/mytickets/myticketstbl.dir.js"></script>
+    </body>
+
+</html>

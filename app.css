@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    height: 10%;
+    width: 100%;
+    background: linear-gradient(to right, #337ab7, aliceblue);    
+    color: white;
+}
+
+.header-font {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+section#mainContent{
+    height: 85%;
+    width: 100%
+}
+
+#home{
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 100%;
+    width: 100%;
+}
+
+footer{
+    height: 5%;
+    width: 100%;
+    text-align: center; 
+    color: white;
+    font-size: 14px;
+    display: table;
+    background-color: tomato;
+}
+
+footer > p{
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+/*#sla_creation_dt{
+    position:absolute;
+    right: 50px;
+}
+#sla_expected_dt{
+    position:absolute;
+    right: 30px;
+}
+#sla_archive_dt{
+    position:absolute;
+    right: 10px;
+}*/
